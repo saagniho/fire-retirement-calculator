@@ -3,8 +3,9 @@
  */
 
 import { useState, useCallback } from 'react';
-import { validateField, ValidationError } from '../calculations/validation';
+import { validateField } from '../calculations/validation';
 import type { RetirementProfile } from '../types/profile';
+import type { ValidationError } from '../calculations/validation';
 
 export interface FormErrors {
   [key: string]: string;
