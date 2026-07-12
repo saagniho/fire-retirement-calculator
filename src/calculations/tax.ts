@@ -7,7 +7,7 @@ import {
   calculateIncomeTax,
   TAX_DEDUCTIONS,
   estimateTax80CSavings,
-} from '@data/taxBrackets';
+} from '../data/taxBrackets';
 
 /**
  * Calculate effective tax rate for a given income

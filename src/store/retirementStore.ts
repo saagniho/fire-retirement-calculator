@@ -7,7 +7,7 @@ import { persist } from 'zustand/middleware';
 import type { RetirementProfile } from '../types/profile';
 import type { CalculationResults } from '../types/results';
 import type { Scenario } from '../types/scenarios';
-import { DEFAULT_RETIREMENT_PROFILE } from '@data/indiaDefaults';
+import { DEFAULT_RETIREMENT_PROFILE } from '../data/indiaDefaults';
 
 export interface RetirementStore {
   // State

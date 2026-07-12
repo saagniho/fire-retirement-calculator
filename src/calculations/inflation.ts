@@ -2,7 +2,7 @@
  * Inflation calculations supporting category-based inflation for India
  */
 
-import { INDIA_DEFAULTS, INFLATION_CATEGORIES } from '@data/indiaDefaults';
+import { INDIA_DEFAULTS, INFLATION_CATEGORIES } from '../data/indiaDefaults';
 
 export type InflationCategory = typeof INFLATION_CATEGORIES[keyof typeof INFLATION_CATEGORIES];
 
