@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply margin-0 font-sans text-sm antialiased;
+}
+
+#root {
+  @apply min-h-screen flex flex-col;
+}
