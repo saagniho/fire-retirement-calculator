@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import FormWizard from './components/Form/FormWizard';
-import { useRetirementStore } from './store/retirementStore';
-import { useRetirementCalculator } from './hooks/useRetirementCalculator';
-import { formatINR } from './utils/formatters';
+import FormWizard from './components/Form/FormWizard.tsx';
+import { useRetirementStore } from './store/retirementStore.ts';
+import { useRetirementCalculator } from './hooks/useRetirementCalculator.ts';
+import { formatINR } from './utils/formatters.ts';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'input' | 'results'>('home');
