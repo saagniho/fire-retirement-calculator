@@ -1,7 +1,13 @@
 import { useState } from 'react';
+import FormWizard from '@components/Form/FormWizard';
+import { useRetirementStore } from '@store/retirementStore';
+import { useRetirementCalculator } from '@hooks/useRetirementCalculator';
+import { formatINR } from '@utils/formatters';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'input' | 'results'>('home');
+  const profile = useRetirementStore((state) => state.profile);
+  const { results, isLoading, error } = useRetirementCalculator(profile);
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
@@ -86,27 +92,77 @@ function App() {
         )}
 
         {currentPage === 'input' && (
-          <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '32px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#111' }}>
-              Calculator Form
-            </h2>
-            <p style={{ color: '#666' }}>
-              ✅ Core calculation engine built and working!<br />
-              ✅ Form wizard UI created (Phase 3)<br />
-              📋 Integrate FormWizard component in next update
-            </p>
-          </div>
+          <FormWizard />
         )}
 
         {currentPage === 'results' && (
           <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '32px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#111' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '24px', color: '#111' }}>
               Retirement Projection
             </h2>
-            <p style={{ color: '#666' }}>
-              ✅ Calculation engine ready<br />
-              📊 Charts coming in Phase 4
-            </p>
+
+            {isLoading && (
+              <p style={{ color: '#666', textAlign: 'center', padding: '32px' }}>
+                Calculating... ⏳
+              </p>
+            )}
+
+            {error && (
+              <div style={{ backgroundColor: '#fee2e2', border: '1px solid #fca5a5', borderRadius: '4px', padding: '16px', color: '#991b1b' }}>
+                <strong>Error:</strong> {error}
+              </div>
+            )}
+
+            {results && !isLoading && !error && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+                {/* KPI Cards */}
+                <div style={{ backgroundColor: '#f0f9ff', border: '1px solid #bfdbfe', borderRadius: '8px', padding: '20px' }}>
+                  <p style={{ color: '#666', fontSize: '14px', margin: '0 0 8px 0' }}>Years to FIRE</p>
+                  <p style={{ color: '#1e40af', fontSize: '32px', fontWeight: 'bold', margin: 0 }}>
+                    {results.yearsToFIRE}
+                  </p>
+                  <p style={{ color: '#666', fontSize: '12px', margin: '8px 0 0 0' }}>
+                    Age {results.age}
+                  </p>
+                </div>
+
+                <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', padding: '20px' }}>
+                  <p style={{ color: '#666', fontSize: '14px', margin: '0 0 8px 0' }}>Corpus Needed</p>
+                  <p style={{ color: '#166534', fontSize: '32px', fontWeight: 'bold', margin: 0 }}>
+                    {formatINR(results.retirementCorpusNeeded)}
+                  </p>
+                  <p style={{ color: '#666', fontSize: '12px', margin: '8px 0 0 0' }}>
+                    at {(profile.safeSWR * 100).toFixed(1)}% SWR
+                  </p>
+                </div>
+
+                <div style={{ backgroundColor: '#fef3c7', border: '1px solid #fcd34d', borderRadius: '8px', padding: '20px' }}>
+                  <p style={{ color: '#666', fontSize: '14px', margin: '0 0 8px 0' }}>Success Rate</p>
+                  <p style={{ color: '#b45309', fontSize: '32px', fontWeight: 'bold', margin: 0 }}>
+                    {(results.monteCarlo.successRate * 100).toFixed(0)}%
+                  </p>
+                  <p style={{ color: '#666', fontSize: '12px', margin: '8px 0 0 0' }}>
+                    1,000 simulations
+                  </p>
+                </div>
+
+                <div style={{ backgroundColor: '#f5f3ff', border: '1px solid #ddd6fe', borderRadius: '8px', padding: '20px' }}>
+                  <p style={{ color: '#666', fontSize: '14px', margin: '0 0 8px 0' }}>Retirement Date</p>
+                  <p style={{ color: '#6b21a8', fontSize: '32px', fontWeight: 'bold', margin: 0 }}>
+                    {results.retirementDate.getFullYear()}
+                  </p>
+                  <p style={{ color: '#666', fontSize: '12px', margin: '8px 0 0 0' }}>
+                    {results.retirementDate.toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {!results && !isLoading && (
+              <div style={{ backgroundColor: '#f3f4f6', border: '1px solid #d1d5db', borderRadius: '4px', padding: '20px', textAlign: 'center', color: '#666' }}>
+                <p>👈 Fill out the form and save to see your retirement projections here</p>
+              </div>
+            )}
           </div>
         )}
       </main>
