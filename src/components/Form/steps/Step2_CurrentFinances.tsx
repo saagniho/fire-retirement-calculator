@@ -41,9 +41,9 @@ export default function Step2_CurrentFinances({
 
         {/* Liquid Assets */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Liquid Assets (Savings, Stocks, Crypto)
-            <span className="text-red-500 ml-1">*</span>
+            <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
           </label>
           <div className="flex items-center gap-2">
             <span className="text-slate-600 dark:text-slate-400">₹</span>
@@ -54,17 +54,17 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleChange('liquidAssets', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             Cash, savings accounts, stocks, mutual funds, crypto
           </p>
         </div>
 
         {/* Illiquid Assets */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Illiquid Assets (Real Estate, Business)
             <span className="text-gray-400 ml-1">(optional)</span>
           </label>
@@ -77,10 +77,10 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleChange('illiquidAssets', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             Home equity, rental properties, business stake
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function Step2_CurrentFinances({
 
         {/* Mortgage */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Home Loan Remaining Balance
             <span className="text-gray-400 ml-1">(optional)</span>
           </label>
@@ -107,14 +107,14 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleLiabilityChange('mortgage', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
         </div>
 
         {/* Student Loans */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Student Loans
             <span className="text-gray-400 ml-1">(optional)</span>
           </label>
@@ -127,14 +127,14 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleLiabilityChange('studentLoans', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
         </div>
 
         {/* Other Debt */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Other Debt (Credit Cards, Personal Loans)
             <span className="text-gray-400 ml-1">(optional)</span>
           </label>
@@ -147,14 +147,14 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleLiabilityChange('otherDebt', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
         </div>
 
         {/* Average Debt Rate */}
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Average Debt Interest Rate
             <span className="text-gray-400 ml-1">(optional)</span>
           </label>
@@ -168,11 +168,11 @@ export default function Step2_CurrentFinances({
               onChange={(e) =>
                 handleLiabilityChange('avgDebtRate', Number(e.target.value) / 100)
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
             <span className="text-slate-600 dark:text-slate-400">% p.a.</span>
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             Weighted average interest rate on all debts
           </p>
         </div>

@@ -20,9 +20,9 @@ export default function Step6_RetirementIncome({
     formData.socialSecurityAmount;
 
   return (
-    <div className="space-y-6">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Passive Income in Retirement (Dividends, Rental, etc.)
           <span className="text-gray-400 ml-1">(optional)</span>
         </label>
@@ -35,14 +35,14 @@ export default function Step6_RetirementIncome({
             onChange={(e) =>
               handleChange('passiveIncomeRetirement', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
           <span className="text-slate-600 dark:text-slate-400">/year</span>
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Expected Pension/Gratuity in Retirement
           <span className="text-gray-400 ml-1">(optional)</span>
         </label>
@@ -55,17 +55,17 @@ export default function Step6_RetirementIncome({
             onChange={(e) =>
               handleChange('pensionIncome', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
           <span className="text-slate-600 dark:text-slate-400">/year</span>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Government/corporate pension, or annuity from EPF/NPS
         </p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Social Security / Other Government Benefits
           <span className="text-gray-400 ml-1">(optional)</span>
         </label>
@@ -78,14 +78,14 @@ export default function Step6_RetirementIncome({
             onChange={(e) =>
               handleChange('socialSecurityAmount', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
           <span className="text-slate-600 dark:text-slate-400">/year</span>
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Age You'll Start Receiving Social Security
           <span className="text-gray-400 ml-1">(if applicable)</span>
         </label>
@@ -98,7 +98,7 @@ export default function Step6_RetirementIncome({
             onChange={(e) =>
               handleChange('socialSecurityAge', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
           <span className="text-slate-600 dark:text-slate-400">years</span>
         </div>
@@ -156,7 +156,7 @@ export default function Step6_RetirementIncome({
       </div>
 
       <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-        <p className="text-sm text-blue-800 dark:text-blue-200">
+        <p style={{ fontSize: '14px', color: '#1e40af' }}>
           <strong>ℹ️ India-Specific Notes:</strong>
           <br />• EPF lump-sum available at 58 (after 5 years service)
           <br />• NPS Tier 1: 50% must purchase annuity at 60

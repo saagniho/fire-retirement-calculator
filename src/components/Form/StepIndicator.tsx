@@ -20,41 +20,64 @@ export default function StepIndicator({
   steps,
 }: StepIndicatorProps) {
   return (
-    <div className="mb-8">
+    <div style={{ marginBottom: '32px' }}>
       {/* Progress bar */}
-      <div className="mb-6">
-        <div className="flex justify-between mb-2">
-          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+      <div style={{ marginBottom: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+          <span style={{ fontSize: '14px', fontWeight: '500', color: '#666' }}>
             Step {currentStep} of {totalSteps}
           </span>
-          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+          <span style={{ fontSize: '14px', fontWeight: '500', color: '#666' }}>
             {Math.round((currentStep / totalSteps) * 100)}%
           </span>
         </div>
-        <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+        <div style={{ width: '100%', backgroundColor: '#ddd', borderRadius: '9999px', height: '8px' }}>
           <div
-            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${(currentStep / totalSteps) * 100}%` }}
+            style={{
+              backgroundColor: '#2563eb',
+              height: '8px',
+              borderRadius: '9999px',
+              width: `${(currentStep / totalSteps) * 100}%`,
+              transition: 'width 300ms ease',
+            }}
           />
         </div>
       </div>
 
       {/* Step dots */}
-      <div className="flex justify-between">
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         {steps.map((step) => (
-          <div key={step.id} className="flex flex-col items-center flex-1">
+          <div key={step.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
             <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm mb-2 transition ${
-                step.id < currentStep
-                  ? 'bg-green-600 text-white'
-                  : step.id === currentStep
-                  ? 'bg-blue-600 text-white ring-4 ring-blue-300 dark:ring-blue-800'
-                  : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
-              }`}
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                marginBottom: '8px',
+                backgroundColor:
+                  step.id < currentStep
+                    ? '#16a34a'
+                    : step.id === currentStep
+                    ? '#2563eb'
+                    : '#ddd',
+                color:
+                  step.id < currentStep || step.id === currentStep
+                    ? '#fff'
+                    : '#666',
+                boxShadow:
+                  step.id === currentStep
+                    ? '0 0 0 4px rgba(37, 99, 235, 0.3)'
+                    : 'none',
+              }}
             >
               {step.id < currentStep ? '✓' : step.id}
             </div>
-            <span className="text-xs text-slate-600 dark:text-slate-400 text-center hidden sm:inline">
+            <span style={{ fontSize: '12px', color: '#666', textAlign: 'center' }}>
               {step.title}
             </span>
           </div>

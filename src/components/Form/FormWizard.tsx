@@ -90,14 +90,14 @@ export default function FormWizard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-800 py-8">
-      <div className="max-w-2xl mx-auto px-4">
+    <div style={{ minHeight: '100vh', backgroundColor: '#f0f4f8', padding: '32px 16px' }}>
+      <div style={{ maxWidth: '42rem', margin: '0 auto' }}>
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+        <div style={{ marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#111', marginBottom: '8px' }}>
             Build Your Retirement Plan
           </h1>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p style={{ color: '#666', fontSize: '14px' }}>
             Let's gather your personal and financial details to calculate your FIRE target
           </p>
         </div>
@@ -110,39 +110,62 @@ export default function FormWizard() {
         />
 
         {/* Current Step */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8 mb-8">
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+        <div style={{ backgroundColor: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', padding: '32px', marginBottom: '32px' }}>
+          <div style={{ marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '22px', fontWeight: 'bold', color: '#111', marginBottom: '8px' }}>
               {STEPS[currentStep - 1].title}
             </h2>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p style={{ color: '#666', fontSize: '14px' }}>
               {STEPS[currentStep - 1].description}
             </p>
           </div>
 
           {/* Step Content */}
-          <div className="mb-8">{renderStep()}</div>
+          <div style={{ marginBottom: '32px' }}>{renderStep()}</div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between gap-4">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px', marginBottom: '16px' }}>
             <button
               onClick={handlePrev}
               disabled={currentStep === 1}
-              className="px-6 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+              style={{
+                padding: '10px 16px',
+                border: '1px solid #ddd',
+                color: '#444',
+                borderRadius: '4px',
+                backgroundColor: '#f5f5f5',
+                cursor: currentStep === 1 ? 'not-allowed' : 'pointer',
+                opacity: currentStep === 1 ? 0.5 : 1,
+              }}
             >
               ← Back
             </button>
 
-            <div className="flex gap-4">
+            <div style={{ display: 'flex', gap: '8px' }}>
               <button
                 onClick={handleReset}
-                className="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition"
+                style={{
+                  padding: '10px 16px',
+                  backgroundColor: 'transparent',
+                  color: '#666',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                }}
               >
                 Reset
               </button>
               <button
                 onClick={handleSave}
-                className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition"
+                style={{
+                  padding: '10px 16px',
+                  backgroundColor: '#16a34a',
+                  color: '#fff',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
               >
                 💾 Save
               </button>
@@ -151,7 +174,16 @@ export default function FormWizard() {
             <button
               onClick={handleNext}
               disabled={currentStep === STEPS.length}
-              className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
+              style={{
+                padding: '10px 16px',
+                backgroundColor: '#2563eb',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: currentStep === STEPS.length ? 'not-allowed' : 'pointer',
+                opacity: currentStep === STEPS.length ? 0.5 : 1,
+                fontWeight: 'bold',
+              }}
             >
               Next →
             </button>
@@ -159,8 +191,8 @@ export default function FormWizard() {
 
           {/* Completion Message */}
           {currentStep === STEPS.length && (
-            <div className="mt-8 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-              <p className="text-green-800 dark:text-green-200">
+            <div style={{ marginTop: '32px', padding: '16px', backgroundColor: '#f0fdf4', border: '1px solid #86efac', borderRadius: '4px' }}>
+              <p style={{ color: '#166534', fontSize: '14px', margin: 0 }}>
                 ✅ All steps complete! Click <strong>Save</strong> to calculate your retirement plan.
               </p>
             </div>

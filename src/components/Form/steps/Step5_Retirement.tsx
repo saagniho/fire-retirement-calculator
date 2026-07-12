@@ -17,11 +17,11 @@ export default function Step5_Retirement({
   const corpusNeeded = formData.targetRetirementSpend / formData.safeSWR;
 
   return (
-    <div className="space-y-6">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Target Annual Retirement Spending
-          <span className="text-red-500 ml-1">*</span>
+          <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
         </label>
         <div className="flex items-center gap-2">
           <span className="text-slate-600 dark:text-slate-400">₹</span>
@@ -32,10 +32,10 @@ export default function Step5_Retirement({
             onChange={(e) =>
               handleChange('targetRetirementSpend', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           How much you want to spend annually in retirement
         </p>
       </div>

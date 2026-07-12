@@ -26,9 +26,9 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
         </h3>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Annual Gross Income (Salary + Side Income)
-            <span className="text-red-500 ml-1">*</span>
+            <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
           </label>
           <div className="flex items-center gap-2">
             <span className="text-slate-600 dark:text-slate-400">₹</span>
@@ -39,10 +39,10 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
               onChange={(e) =>
                 handleChange('currentAnnualIncome', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             Total before taxes and expenses
           </p>
         </div>
@@ -55,9 +55,9 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
         </h3>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Total Annual Expenses
-            <span className="text-red-500 ml-1">*</span>
+            <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
           </label>
           <div className="flex items-center gap-2">
             <span className="text-slate-600 dark:text-slate-400">₹</span>
@@ -68,10 +68,10 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
               onChange={(e) =>
                 handleChange('annualExpenses', Number(e.target.value))
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             Current annual spending (all categories combined)
           </p>
         </div>
@@ -84,9 +84,9 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
         </h3>
 
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
             Expected Annual Salary Growth
-            <span className="text-red-500 ml-1">*</span>
+            <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -98,11 +98,11 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
               onChange={(e) =>
                 handleChange('salaryGrowthRate', Number(e.target.value) / 100)
               }
-              className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+              style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
             />
             <span className="text-slate-600 dark:text-slate-400">% per year</span>
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
             India average: 3% | Conservative: 1% | Optimistic: 5%
           </p>
         </div>
@@ -161,7 +161,7 @@ export default function Step3_Income({ formData, handleChange }: Step3Props) {
 
       {/* Info Box */}
       <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-        <p className="text-sm text-blue-800 dark:text-blue-200">
+        <p style={{ fontSize: '14px', color: '#1e40af' }}>
           <strong>ℹ️ Note:</strong> Expenses are assumed to grow with inflation
           (5.5% by default) during your working years. We'll adjust this in the next step.
         </p>

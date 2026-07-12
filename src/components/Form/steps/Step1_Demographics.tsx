@@ -15,36 +15,36 @@ export default function Step1_Demographics({
   handleChange,
 }: Step1Props) {
   return (
-    <div className="space-y-6">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Current Age */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Current Age
-          <span className="text-red-500 ml-1">*</span>
+          <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
         </label>
-        <div className="flex items-center gap-4">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <input
             type="number"
             min="18"
             max="100"
             value={formData.currentAge}
             onChange={(e) => handleChange('currentAge', Number(e.target.value))}
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
-          <span className="text-sm text-slate-600 dark:text-slate-400">years</span>
+          <span style={{ fontSize: '14px', color: '#666' }}>years</span>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Must be between 18 and 100
         </p>
       </div>
 
       {/* Retirement Target Age */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Target Retirement Age
-          <span className="text-red-500 ml-1">*</span>
+          <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
         </label>
-        <div className="flex items-center gap-4">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <input
             type="number"
             min={formData.currentAge + 1}
@@ -53,11 +53,11 @@ export default function Step1_Demographics({
             onChange={(e) =>
               handleChange('retirementTargetAge', Number(e.target.value))
             }
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
-          <span className="text-sm text-slate-600 dark:text-slate-400">years</span>
+          <span style={{ fontSize: '14px', color: '#666' }}>years</span>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Years to FIRE:{' '}
           <strong>
             {formData.retirementTargetAge - formData.currentAge} years
@@ -67,22 +67,22 @@ export default function Step1_Demographics({
 
       {/* Life Expectancy */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Life Expectancy
-          <span className="text-red-500 ml-1">*</span>
+          <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
         </label>
-        <div className="flex items-center gap-4">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <input
             type="number"
             min={formData.retirementTargetAge + 1}
             max="120"
             value={formData.lifeExpectancy}
             onChange={(e) => handleChange('lifeExpectancy', Number(e.target.value))}
-            className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+            style={{ flex: '1', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
           />
-          <span className="text-sm text-slate-600 dark:text-slate-400">years</span>
+          <span style={{ fontSize: '14px', color: '#666' }}>years</span>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Retirement duration:{' '}
           <strong>{formData.lifeExpectancy - formData.retirementTargetAge} years</strong>
         </p>
@@ -90,14 +90,14 @@ export default function Step1_Demographics({
 
       {/* Country */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Country
-          <span className="text-red-500 ml-1">*</span>
+          <span style={{ color: '#dc2626', marginLeft: '4px' }}>*</span>
         </label>
         <select
           value={formData.country}
           onChange={(e) => handleChange('country', e.target.value)}
-          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+          style={{ width: '100%', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
         >
           <option value="India">India 🇮🇳</option>
           <option value="USA">USA 🇺🇸</option>
@@ -105,20 +105,20 @@ export default function Step1_Demographics({
           <option value="Canada">Canada 🇨🇦</option>
           <option value="Other">Other</option>
         </select>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Affects tax treatment and inflation assumptions
         </p>
       </div>
 
       {/* Currency */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
           Currency
         </label>
         <select
           value={formData.currency}
           onChange={(e) => handleChange('currency', e.target.value)}
-          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg dark:bg-slate-700 dark:text-white"
+          style={{ width: '100%', padding: '8px 16px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', color: '#111', fontFamily: 'inherit' }}
         >
           <option value="INR">₹ Indian Rupee (INR)</option>
           <option value="USD">$ US Dollar (USD)</option>
@@ -129,12 +129,12 @@ export default function Step1_Demographics({
 
       {/* Gender (Optional) */}
       <div>
-        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-          Gender <span className="text-xs text-slate-500">(optional)</span>
+        <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '8px' }}>
+          Gender <span style={{ fontSize: '12px', color: '#888' }}>(optional)</span>
         </label>
-        <div className="flex gap-4">
+        <div style={{ display: 'flex', gap: '16px' }}>
           {(['male', 'female', 'other'] as const).map((gender) => (
-            <label key={gender} className="flex items-center gap-2 cursor-pointer">
+            <label key={gender} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
               <input
                 type="radio"
                 name="gender"
@@ -143,22 +143,22 @@ export default function Step1_Demographics({
                 onChange={(e) =>
                   handleChange('gender', e.target.value as 'male' | 'female' | 'other')
                 }
-                className="w-4 h-4"
+                style={{ width: '16px', height: '16px' }}
               />
-              <span className="text-sm capitalize text-slate-700 dark:text-slate-300">
+              <span style={{ fontSize: '14px', textTransform: 'capitalize', color: '#374151' }}>
                 {gender}
               </span>
             </label>
           ))}
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        <p style={{ fontSize: '12px', color: '#888', marginTop: '4px' }}>
           Used for life expectancy estimates
         </p>
       </div>
 
       {/* Info Box */}
-      <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-        <p className="text-sm text-blue-800 dark:text-blue-200">
+      <div style={{ marginTop: '32px', padding: '16px', backgroundColor: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: '4px' }}>
+        <p style={{ fontSize: '14px', color: '#1e40af' }}>
           <strong>ℹ️ India-Specific Defaults:</strong>
           <br />
           • Life expectancy: Male {INDIA_DEFAULTS.maleLifeExpectancy}, Female{' '}
