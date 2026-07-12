@@ -2,8 +2,8 @@
  * Step 6: Retirement Income Sources - EPF, pension, passive income
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { formatINR } from '../utils/formatters';
+import type { RetirementProfile } from '../../../types/profile';
+import { formatINR } from '../../../utils/formatters';
 
 interface Step6Props {
   formData: RetirementProfile;

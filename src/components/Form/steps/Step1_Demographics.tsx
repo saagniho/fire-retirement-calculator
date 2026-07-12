@@ -2,8 +2,8 @@
  * Step 1: Demographics - Age, country, life expectancy
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { INDIA_DEFAULTS } from '../data/indiaDefaults';
+import type { RetirementProfile } from '../../../types/profile';
+import { INDIA_DEFAULTS } from '../../../data/indiaDefaults';
 
 interface Step1Props {
   formData: RetirementProfile;

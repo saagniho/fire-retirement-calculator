@@ -2,8 +2,8 @@
  * Step 3: Income & Expenses
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { formatINR, formatPercent } from '../utils/formatters';
+import type { RetirementProfile } from '../../../types/profile';
+import { formatINR, formatPercent } from '../../../utils/formatters';
 
 interface Step3Props {
   formData: RetirementProfile;

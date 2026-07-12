@@ -3,9 +3,9 @@
  */
 
 import { useState } from 'react';
-import type { RetirementProfile } from '../types/profile';
-import { useRetirementStore } from '../store/retirementStore';
-import { DEFAULT_RETIREMENT_PROFILE } from '../data/indiaDefaults';
+import type { RetirementProfile } from '../../types/profile';
+import { useRetirementStore } from '../../store/retirementStore';
+import { DEFAULT_RETIREMENT_PROFILE } from '../../data/indiaDefaults';
 import Step1_Demographics from './steps/Step1_Demographics';
 import Step2_CurrentFinances from './steps/Step2_CurrentFinances';
 import Step3_Income from './steps/Step3_Income';

@@ -2,8 +2,8 @@
  * Step 2: Current Finances - Assets and Liabilities
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { formatINR } from '../utils/formatters';
+import type { RetirementProfile } from '../../../types/profile';
+import { formatINR } from '../../../utils/formatters';
 
 interface Step2Props {
   formData: RetirementProfile;

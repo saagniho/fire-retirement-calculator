@@ -2,8 +2,8 @@
  * Step 5: Retirement Lifestyle - Target spending
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { formatINR } from '../utils/formatters';
+import type { RetirementProfile } from '../../../types/profile';
+import { formatINR } from '../../../utils/formatters';
 
 interface Step5Props {
   formData: RetirementProfile;

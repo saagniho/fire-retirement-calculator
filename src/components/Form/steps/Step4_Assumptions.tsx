@@ -2,9 +2,9 @@
  * Step 4: Assumptions - Returns, inflation, taxes
  */
 
-import type { RetirementProfile } from '../types/profile';
-import { formatPercent } from '../utils/formatters';
-import { INDIA_DEFAULTS } from '../data/indiaDefaults';
+import type { RetirementProfile } from '../../../types/profile';
+import { formatPercent } from '../../../utils/formatters';
+import { INDIA_DEFAULTS } from '../../../data/indiaDefaults';
 
 interface Step4Props {
   formData: RetirementProfile;
