@@ -1,50 +1,57 @@
 import { useState } from 'react';
-import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'input' | 'results'>('home');
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
+      <header style={{ borderBottom: '1px solid #e2e8f0', backgroundColor: '#fff' }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '24px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
+            <h1 style={{ fontSize: '30px', fontWeight: 'bold', margin: '0 0 8px 0', color: '#111' }}>
               🎯 FIRE Calculator
             </h1>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p style={{ fontSize: '14px', color: '#666', margin: 0 }}>
               Personal Retirement Planning for India
             </p>
           </div>
-          <nav className="flex gap-4">
+          <nav style={{ display: 'flex', gap: '16px' }}>
             <button
               onClick={() => setCurrentPage('home')}
-              className={`px-4 py-2 rounded ${
-                currentPage === 'home'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
-              }`}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '4px',
+                backgroundColor: currentPage === 'home' ? '#2563eb' : 'transparent',
+                color: currentPage === 'home' ? '#fff' : '#444',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             >
               Home
             </button>
             <button
               onClick={() => setCurrentPage('input')}
-              className={`px-4 py-2 rounded ${
-                currentPage === 'input'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
-              }`}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '4px',
+                backgroundColor: currentPage === 'input' ? '#2563eb' : 'transparent',
+                color: currentPage === 'input' ? '#fff' : '#444',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             >
               Calculator
             </button>
             <button
               onClick={() => setCurrentPage('results')}
-              className={`px-4 py-2 rounded ${
-                currentPage === 'results'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
-              }`}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '4px',
+                backgroundColor: currentPage === 'results' ? '#2563eb' : 'transparent',
+                color: currentPage === 'results' ? '#fff' : '#444',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             >
               Results
             </button>
@@ -52,19 +59,26 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-12">
+      <main style={{ maxWidth: '80rem', margin: '0 auto', padding: '48px 16px' }}>
         {currentPage === 'home' && (
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+          <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#111' }}>
               Welcome to the FIRE Calculator
             </h2>
-            <p className="text-slate-700 dark:text-slate-300 mb-4">
+            <p style={{ color: '#555', marginBottom: '16px' }}>
               This calculator helps you determine when you can retire using the FIRE (Financial Independence, Retire Early) methodology, tailored for the Indian context.
             </p>
             <button
               onClick={() => setCurrentPage('input')}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded"
+              style={{
+                backgroundColor: '#2563eb',
+                color: '#fff',
+                fontWeight: 'bold',
+                padding: '12px 24px',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+              }}
             >
               Start Calculator →
             </button>
@@ -72,33 +86,35 @@ function App() {
         )}
 
         {currentPage === 'input' && (
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-              Personal Profile
+          <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '32px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#111' }}>
+              Calculator Form
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 mb-6">
-              Form coming soon - Core calculation engine is ready!
+            <p style={{ color: '#666' }}>
+              ✅ Core calculation engine built and working!<br />
+              ✅ Form wizard UI created (Phase 3)<br />
+              📋 Integrate FormWizard component in next update
             </p>
           </div>
         )}
 
         {currentPage === 'results' && (
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+          <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '32px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#111' }}>
               Retirement Projection
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 mb-6">
-              Charts and results coming soon - Calculation engine ready to power visualizations!
+            <p style={{ color: '#666' }}>
+              ✅ Calculation engine ready<br />
+              📊 Charts coming in Phase 4
             </p>
           </div>
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-600 dark:text-slate-400">
-          <p>FIRE Calculator v0.1 - Built with React + TypeScript + Tailwind</p>
-          <p>India-specific financial calculations | Data stored locally</p>
+      <footer style={{ borderTop: '1px solid #e2e8f0', backgroundColor: '#fff', marginTop: '48px' }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '24px 16px', textAlign: 'center', fontSize: '14px', color: '#666' }}>
+          <p style={{ margin: 0 }}>FIRE Calculator v0.1 - Built with React + TypeScript</p>
+          <p style={{ margin: '8px 0 0 0' }}>India-specific financial calculations | Data stored locally</p>
         </div>
       </footer>
     </div>
